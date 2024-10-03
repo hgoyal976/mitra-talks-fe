@@ -64,7 +64,7 @@ export const login = async (req, res) => {
         console.log("checking::::", user, isMatch);
 
         if (!user || !isMatch) {
-            res.status(404).json({ error: "username or password is incorrect" });
+           return res.status(400).json({ error: "username or password is incorrect" });
         }
         generateTokenAndCookies(user._id, res);
 

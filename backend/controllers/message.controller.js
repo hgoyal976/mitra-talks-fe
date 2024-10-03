@@ -1,3 +1,4 @@
+import mongoose from "mongoose";
 import Conversation from "../models/conversation.model.js";
 import Message from "../models/message.model.js";
 
@@ -8,14 +9,15 @@ export const sendMessage = async (req, res) => {
         let { message, recievers } = req.body;
         // let { id: receiversID } = req.params;
         let senderID = req.user._id;
-
+        const recieversArr = recievers.map(i => new mongoose.Types.ObjectId(i))
+        // console.log("checking ids:::", senderID.toString(), recieversArr);
         let conversation = await Conversation.findOne({
-            participants: { $all: [senderID, ...recievers] }
+            participants: [...recieversArr]
         })
-
+        console.log(conversation)
         if (!conversation) {
             conversation = await Conversation.create({
-                participants: [senderID, ...recievers]
+                participants: [...recieversArr]
             })
         }
         console.log(conversation)
@@ -45,7 +47,7 @@ export const getMessage = async (req, res) => {
         let senderID = req.user._id;
 
         let conversation = await Conversation.findOne({
-            _id: conversationId
+            _id:  new mongoose.Types.ObjectId(conversationId),
         }).populate("messages"); // populate we can use because we have given ref in our model. and this will collect all the doucuments and convert it to array of objects
         console.log(conversation)
         if (!conversation) return res.status(201).json([]);

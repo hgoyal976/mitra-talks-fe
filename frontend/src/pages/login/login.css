@@ -1,0 +1,22 @@
+.username-div{
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    align-items: flex-start;
+    margin-left: 45px;
+    gap: 5px;
+}
+
+.app-name {
+    background: linear-gradient(179deg, rgb(101, 129, 255), rgb(221, 147, 187)) text;
+    color: transparent;
+}
+
+  
+.login-input{
+    width: 260px;
+    background: transparent;
+    border: 1px solid #898989;
+    padding: 5px;
+    border-radius: 2px;
+}

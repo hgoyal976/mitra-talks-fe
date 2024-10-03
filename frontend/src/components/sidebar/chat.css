@@ -1,0 +1,15 @@
+.chat-username {
+    font-family: sans-serif;
+    display: block;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.chat-last-message {
+    font-size: 8px;
+    position: relative;
+    bottom: 6px;
+    color: #10002b;
+}
