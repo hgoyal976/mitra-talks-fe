@@ -12,9 +12,9 @@ function Chat({ conversation, lastIdx }) {
         onClick={() => { setSelectedConversation(conversation) }}
     >
         <div style={{ width: "27px", height: "27px" }}>
-            <img src={conversation?.participantsProfilePic?.length === 1 ? conversation?.participantsProfilePic[0] : ""} />
+            <img src={conversation?.profilePic} />
         </div>
-        <label className="chat-username">{conversation.groupName === "" ? conversation.participantsNames?.toString() : conversation.groupName}</label>
+        <label className="chat-username">{conversation.name}</label>
         {/* <label className="chat-last-message">yesterday</label> */}
     </div>
 }

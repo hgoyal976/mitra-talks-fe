@@ -1,0 +1,58 @@
+.new-text-btn {
+  /* display: flex;
+    align-items: center; */
+  cursor: pointer;
+}
+.new-chat-text {
+  margin-right: 10px;
+  opacity: 0;
+  white-space: nowrap;
+  transition: opacity 0.3s ease, margin-left 0.3s ease;
+}
+.new-text-btn:hover .new-text-icon {
+  transform: scale(1.2); /* Icon scaling effect on hover */
+  color: #fff;
+}
+.new-text-icon {
+  transition: transform 0.3s ease;
+}
+.new-text-btn:hover .new-chat-text {
+  opacity: 1;
+  margin-right: 15px;
+  color: #fff;
+  /* Text appears with slight margin */
+}
+.new-text-btn:hover {
+  background-color: black;
+  padding: 3px 10px 5px 10px;
+  border-radius: 20px;
+}
+.log-out-btn {
+  /* display: flex;
+    align-items: center; */
+  cursor: pointer;
+}
+.log-out-text {
+  margin-right: 10px;
+  opacity: 0;
+  white-space: nowrap;
+  transition: opacity 0.3s ease, margin-left 0.3s ease;
+}
+.log-out-btn:hover .log-out-icon {
+  transform: scale(1.2); /* Icon scaling effect on hover */
+  color: #fff;
+}
+.log-out-icon {
+  transition: transform 0.3s ease;
+}
+.log-out-btn:hover .log-out-text {
+  opacity: 1;
+  margin-left: 15px;
+  color: #fff;
+  /* Text appears with slight margin */
+}
+.log-out-btn:hover {
+  background-color: black;
+  padding: 3px 10px 5px 10px;
+  border-radius: 20px;
+}

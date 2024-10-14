@@ -13,7 +13,7 @@ const useSendMessage = () => {
                 {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ "message": messageToSend, "recievers": selectedConversation.participants })
+                    body: JSON.stringify({ "message": messageToSend, "conversationId": selectedConversation._id })
                 }
             )
             const data = await res.json();
@@ -23,6 +23,7 @@ const useSendMessage = () => {
             setMessages([...messages, data]);
         } catch (err) {
             toast.error(err.message);
+console.log(err);
         } finally {
             setLoading(false);
         }
